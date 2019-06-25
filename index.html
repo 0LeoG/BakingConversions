@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </link>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</head>
+<html>
+
+<body>
+    <ul class="nav nav-pills" style="padding-top: 10px; padding-left: 10px;">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#calculator">Calculator</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#information">Information</a>
+        </li>
+
+    </ul>
+
+
+    <div class="tab-content">
+        <div id="calculator" class="tab-pane fade in show active">
+            <div class="cardContainer">
+                    <ul class="nav nav-pills" style="padding-bottom: 10px;">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#cupsToTBS">Cups to Tablespoons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#TBStoTPS">Tablespoons to Teaspoons</a>
+                            </li>
+                    
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="cupsToTBS" class="tab-pane fade show active">
+                                    <h1>Cups to Table Spoon Calculator</h1>
+                                    <div class="input-group mb-3">
+                                        <input oninput="calculateCupsToTableSpoons()" class="form-control" type="text" id="cupsValue"
+                                            placeholder="0">
+                                        <div class="input-group-append"><span class="input-group-text">Cups</span></div>
+                                    </div>
+                    
+                                    <div>
+                                        <center><img src="equal.png" style="max-width: 50px;"></img></center>
+                                    </div>
+                    
+                                    </br>
+                    
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" disabled type="text" id="tableSpoonValue" placeholder="0">
+                                        <div class="input-group-append"><span class="input-group-text">Table Spoons</span></div>
+                                    </div>
+                            </div>
+
+                            <div id="TBStoTPS" class="tab-pane fade">
+                                    <h1>Table Spoon to Tea spoon Calculator</h1>
+                                    <div class="input-group mb-3">
+                                        <input oninput="calculateTablespoonsToTeaspoons()" class="form-control" type="text" id="TBSValue"
+                                            placeholder="0">
+                                        <div class="input-group-append"><span class="input-group-text">Table Spoons</span></div>
+                                    </div>
+                    
+                                    <div>
+                                        <center><img src="equal.png" style="max-width: 50px;"></img></center>
+                                    </div>
+                    
+                                    </br>
+                    
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" disabled type="text" id="TSPValue" placeholder="0">
+                                        <div class="input-group-append"><span class="input-group-text">Teas Spoons</span></div>
+                                    </div>
+                            </div>
+                        </div>               
+            </div>
+        </div>
+    
+            <div class="tab-pane fade flexContainer" id="information">
+                <div class="cardContainer">
+                <h1>Project Information</h1>
+                <p>This project serves as a go to website to do calculations for measurements for baking. Please feel
+                    free
+                    to
+                    share and use this website how you like.</p>
+                </div>
+            </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    function calculateCupsToTableSpoons() {
+        var tableSpoons = 0;
+        var cups = document.getElementById("cupsValue");
+        var tableSpoonsElement = document.getElementById("tableSpoonValue");
+
+        tableSpoons = cups.value * 16;
+
+        tableSpoonsElement.value = tableSpoons;
+    }
+
+    function calculateTablespoonsToTeaspoons(){
+        var teaspoons = 0;
+        var tableSpoons = document.getElementById("TBSValue");
+        var teaspoonElement = document.getElementById("TSPValue");
+
+        teaspoons = tableSpoons.value * 3;
+
+        teaspoonElement.value = teaspoons;
+    }
+</script>

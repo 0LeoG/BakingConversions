@@ -1,0 +1,22 @@
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+  
+    /* max-width: 400px;
+    height:100px;
+    border: 10px black;
+    background-color: aliceblue; */
+}
+
+.cardContainer{
+    background-color:aliceblue;
+	border-radius: 4px;
+	max-width: 800px;
+	margin: 10% auto;
+	height: 500px;
+	padding: 34px;
+	color: #444;
+	cursor: pointer;
+}
+
